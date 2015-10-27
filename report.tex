@@ -1,8 +1,11 @@
 \documentclass[]{lboro}
 
-\usepackage[style=numeric,sorting=nyt]{biblatex}
-%\usepackage[style=authoryear,sorting=nyt]{biblatex}
+%\usepackage[style=numeric,sorting=nyt]{biblatex}
+\usepackage[style=authoryear,sorting=nyt]{biblatex}
 \addbibresource{back/references.bib}
+\setlist{noitemsep}
+\usepackage{pdflscape}
+
 
 \title{Group Project}
 \subtitle{Project Initiation Document}
@@ -28,8 +31,6 @@
 \include{main/technical_considerations}
 \include{main/ideas}
 \include{main/literature_review}
-% delete in real report
-\include{main/example}
 
 \backmatter
 \include{back/refs}

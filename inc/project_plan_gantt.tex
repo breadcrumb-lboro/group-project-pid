@@ -1,0 +1,66 @@
+\begin{ganttchart}[%
+    hgrid=false,%
+    vgrid={dotted},%
+    y unit title=2.8mm,%
+    y unit chart=2.6mm,%
+    title height = 0.8,%
+    x unit=4.375mm,%
+    bar height=0.7,%
+    group peaks width=0.12mm,%
+    group peaks height=0.08mm,%
+    group label font=\normalsize,%
+    milestone height=0.2mm,%
+    % milestone top shift=0.15mm,%
+    milestone left shift=0.24mm,%
+    milestone right shift=0.06mm,%
+    milestone inline label node/.append style={right=0.1mm},%
+    bar label font=\tiny,%
+    title label font=\tiny,%
+    group label font=\tiny,%
+    milestone label font=\tiny,%
+  ]{1}{32}
+
+    \gantttitle{Week}{32}\\
+    \gantttitlelist{1,...,32}{1}\\
+
+    \ganttbar{}{-200}{-199}\\ % this is needed so we can have labels above gantt groups
+    \ganttgroup[inline]{Project Initiation}{1}{9}\\
+      \ganttbar[inline]{A}{1}{5}\\
+      \ganttbar[inline]{B}{5}{9}\\
+      \ganttmilestone[inline]{M1}{9}\\
+
+    \ganttbar{}{-200}{-199}\\ % this is needed so we can have labels above gantt groups
+    \ganttgroup[inline]{Report}{10}{29}\\
+      \ganttbar[inline]{C}{10}{10}\\
+      \ganttbar[inline]{D}{10}{10}\\
+      \ganttbar[inline]{E}{10}{10}\\
+      \ganttmilestone[inline]{M2}{10}\\
+      \ganttbar[inline]{F}{11}{11}\\
+      \ganttbar[inline]{G}{11}{11}\\
+      \ganttbar[inline]{H}{12}{12}\\
+      \ganttbar[inline]{I}{13}{13}\\
+      \ganttbar[inline]{J}{26}{27}\\
+      \ganttbar[inline]{K}{28}{29}\\
+
+    \ganttbar{}{-200}{-199}\\ % this is needed so we can have labels above gantt groups
+    \ganttgroup[inline]{Core Development}{11}{25}\\
+      \ganttbar[inline]{L}{11}{12}\\
+      \ganttbar[inline]{M}{13}{13}\\
+      \ganttbar[inline]{N}{14}{14}\\
+      \ganttbar[inline]{O}{15}{16}\\
+      \ganttbar[inline]{P}{17}{17}\\
+      \ganttbar[inline]{Q}{18}{21}\\
+      \ganttbar[inline]{R}{22}{22}\\
+      \ganttbar[inline]{S}{23}{23}\\
+      \ganttbar[inline]{T}{24}{24}\\
+      \ganttbar[inline]{U}{25}{25}\\
+
+    \ganttbar{}{-200}{-199}\\ % this is needed so we can have labels above gantt groups
+    \ganttgroup[inline]{Ancillary}{5}{27}\\
+      \ganttbar[inline]{V}{5}{5} \ganttbar[inline]{V}{8}{8} \ganttbar[inline]{V}{12}{12}\\
+      \ganttbar[inline]{W}{26}{27}\\
+
+    %\ganttmilestone[inline]{\tiny{Hand In}}{37}\\
+    %\ganttmilestone[inline]{\tiny{Demo}}{38}\\
+
+\end{ganttchart}

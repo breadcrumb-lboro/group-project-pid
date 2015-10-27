@@ -23,6 +23,7 @@ build: report.tex
 	lualatex report.tex
 	biber report
 	lualatex report.tex
+	lualatex report.tex
 	mkdir -p build
 	cp -f report.pdf ./build/
 	xdg-open ./build/report.pdf

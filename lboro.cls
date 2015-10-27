@@ -456,8 +456,14 @@
 \long\def\@makecaption#1#2{%
   \captionstyle
   \setbox\@tempboxa\hbox{{\floatlegendstyle #1\floatcounterend}\capstrut #2}
-  \hbox to\hsize{\leftlegendglue\unhbox\@tempboxa\hfil}%
+  \hbox to\hsize{\leftlegendglue\unhbox\@tempboxa\hfil}
 }
+
+%\long\def\@makecaption#1#2{%
+%  \captionstyle
+%  \centering
+%  {{\floatlegendstyle #1\floatcounterend}\capstrut #2}
+%}
 
 \newcounter{merk}
 
