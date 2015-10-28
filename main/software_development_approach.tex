@@ -2,7 +2,7 @@
 
 \subsection{Choice of Development Approach and Rationale}
 
-The group has decided to follow an agile development methodology throughout the software development stage. According to~\cite{book:software_engineering_economics}, the cost of removing a software defect or implementing substantial change rises exponentially for each stage of the development cycle when it remains undiscovered. Consequently, the group must start considering the best way to effectively handle inevitable change throughout the project’s lifecycle. If the group opted to combat this change by following the traditional waterfall approach and anticipating the complete set of requirements early on then it could quickly be accused of being unresponsive to changing business conditions. \cite{art:agile_business_innovation} assert that a much better strategy can be espoused from the agile method, in which the group can attempt to reduce the cost of change throughout the project by:
+The group has decided to follow an agile development methodology throughout the software development stage. According to~\textcite{book:software_engineering_economics}, the cost of removing a software defect or implementing substantial change rises exponentially for each stage of the development cycle when it remains undiscovered. Consequently, the group must start considering the best way to effectively handle inevitable change throughout the project’s lifecycle. If the group opted to combat this change by following the traditional waterfall approach and anticipating the complete set of requirements early on then it could quickly be accused of being unresponsive to changing business conditions. \textcite{art:agile_business_innovation} assert that a much better strategy can be espoused from the agile method, in which the group can attempt to reduce the cost of change throughout the project by:
 
 \begin{itemize}
   \item Producing weekly deliveries in order to achieve an early win and acquire rapid feedback
@@ -10,7 +10,7 @@ The group has decided to follow an agile development methodology throughout the 
   \item Testing constantly in an automated manner, for earlier, less expensive, defect detection
 \end{itemize}
 
-\cite{art:adaptive_sdpm} assert that the main disadvantages of agile models are poor quality product, poor design and improper documentation. Fortunately, the group can effectively tackle the abovementioned issues in the following manner: disciplined sprint cycles, version control, automated unit testing, test/behaviour driven development, continuous integration, and adequate team structure.
+\textcite{art:adaptive_sdpm} assert that the main disadvantages of agile models are poor quality product, poor design and improper documentation. Fortunately, the group can effectively tackle the abovementioned issues in the following manner: disciplined sprint cycles, version control, automated unit testing, test/behaviour driven development, continuous integration, and adequate team structure.
 
 \subsection{Sprint Cycle}
 
@@ -78,7 +78,7 @@ According to Sharma, et al~\parencite{rep:unit_testing_validation}, a unit test 
   \end{minipage}
 \end{figure}
 
-The group will not write unit tests after all of the software is written. Instead, each unit test will be written beforehand in order to reduce the likelihood of producing bad code -- employing a test-driven development (TDD) approach which involves the following steps as suggested by~\cite{book:art_of_unit_testing}:
+The group will not write unit tests after all of the software is written. Instead, each unit test will be written beforehand in order to reduce the likelihood of producing bad code -- employing a test-driven development (TDD) approach which involves the following steps as suggested by~\textcite{book:art_of_unit_testing}:
 
 \begin{itemize}
   \item Write a failing test to prove code or functionality is missing from the solution. For example, if a group member wanted to add a new feature to the solution that remembers the user’s age, then they would need to write a test that verifies that the age is indeed a number. At this point, the test should not pass because the solution currently lacks that functionality.
@@ -100,7 +100,7 @@ Alternatively, the group can also experiment with a behaviour-driven development
   \end{minipage}
 \end{figure}
 
-Continuous integration (CI) is a software development practice in which updates to the solution are immediately tested and reported on when they are added to the main codebase. In using CI, the group will receive rapid feedback so that if a defect is introduced, it can be identified and corrected as soon as possible~\parencite{web:behaviour_driven_development}. The group will be using Travis CI, an open-source continuous integration service to automatically build and test the solution hosted at GitHub. According to~\cite{book:ci_NET}, if the group implements and maintains relatively good CI processes, they are more likely to create a better solution, as they would have done testing and integration consistently earlier in the process, reducing the chances of catching bugs later. Furthermore it promotes transparency, as each group member will be able to see the results of the build and know where the problems are.
+Continuous integration (CI) is a software development practice in which updates to the solution are immediately tested and reported on when they are added to the main codebase. In using CI, the group will receive rapid feedback so that if a defect is introduced, it can be identified and corrected as soon as possible~\parencite{web:behaviour_driven_development}. The group will be using Travis CI, an open-source continuous integration service to automatically build and test the solution hosted at GitHub. According to~\textcite{book:ci_NET}, if the group implements and maintains relatively good CI processes, they are more likely to create a better solution, as they would have done testing and integration consistently earlier in the process, reducing the chances of catching bugs later. Furthermore it promotes transparency, as each group member will be able to see the results of the build and know where the problems are.
 
 \subsection{Team Structure}
 
