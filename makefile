@@ -6,8 +6,10 @@ log = $(shell find . | grep "\.log")
 lof = $(shell find . | grep "\.lof")
 lot = $(shell find . | grep "\.lot")
 bcf = $(shell find . | grep "\.bcf")
+lol = $(shell find . | grep "\.lol")
+pyg = $(shell find . | grep "\.pyg")
 run_xml = $(shell find . | grep "\.run\.xml")
-out = $(aux) $(toc) $(bbl) $(blg) $(log) $(lof) $(lot) $(run_xml) $(bcf)
+out = $(aux) $(toc) $(bbl) $(blg) $(log) $(lof) $(lot) $(run_xml) $(bcf) $(lol) $(pyg)
 
 .PHONY: build
 
@@ -20,10 +22,10 @@ out = $(aux) $(toc) $(bbl) $(blg) $(log) $(lof) $(lot) $(run_xml) $(bcf)
 # 	xdg-open ./build/report.pdf
 
 build: report.tex
-	lualatex report.tex
+	lualatex -shell-escape report.tex
 	biber report
-	lualatex report.tex
-	lualatex report.tex
+	lualatex -shell-escape report.tex
+	lualatex -shell-escape report.tex
 	mkdir -p build
 	cp -f report.pdf ./build/
 	xdg-open ./build/report.pdf
