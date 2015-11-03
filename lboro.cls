@@ -481,8 +481,9 @@
    \@tempcnta=\value{merk}%
    \setcounter{merk}{\value{figure}}%
    \setcounter{figure}{\the\@tempcnta}%
-   \def\thefigure{\thesection.
-   \@arabic\c@merk\alph{figure}}%
+   %\def\thefigure{\thesection.
+   %\@arabic\c@merk\alph{figure}}%
+   \def\thefigure{\@arabic\c@merk\alph{figure}}%
    \let\resetsubfig=\r@setsubfig}
 
 \def\samenumber{\addtocounter{\@captype}{-1}%
