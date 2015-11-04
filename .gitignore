@@ -25,6 +25,7 @@
 *.lol
 *.bcf
 *.pdf
+!inc/*.pdf
 *.run.xml
 
 _minted-report/
