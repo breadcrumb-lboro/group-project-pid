@@ -163,26 +163,16 @@ Now that the classifier has been created and trained, the sentiment analyser can
 
 \clearpage
 
-\subsection{Encryption}
+\subsection{Encryption and Security}
 
-Data and device encryption are critical pieces of an overall mobile security initiative. Implementing encryption is vital to ensuring that sensitive data is kept safe. We will tackle mobile data encryption from two angles: data on devices and data transmitted to and from those devices.
+Data and device encryption are critical pieces of an overall mobile security initiative. Implementing the correct level of encryption is vital to ensuring that sensitive data is kept safe. Consequently, the group will need to tackle mobile data encryption from two angles: data on devices and data transmitted to and from those devices.
 
-\subsubsection{Data encryption techniques for on-device data}
+\subsubsection{Data Encryption Techniques for On-Device Data}
 
-The latest version of the Android OS offers several Android enterprise features, including on-device encryption (as long as users specifically enable it on their devices). And apps such as WhisperCore make it possible to fully encrypted on-device data on devices running older versions of Android.
+The latest version of the Android OS offers on-device encryption capabilities, as long as users enable it on their devices. When device encryption is enabled, the entire phone's file system is protected. However, turning encryption on does not mean that other supplementary file systems are protected. For instance, most Android devices have MicroSD cards which have to be deliberately secured. Securing MicroSD cards is a challenging prospect, as it makes the media difficult to plug into other devices, as both units require the same security keys in order to interact coherently. Therefore, the group will need to make sure that the app will be installed on the internal storage component of the a mobile device ~\parencite{web:mobile_data_encryption_techniques}.
 
-When device encryption is enabled, the entire file system is protected, but turning encryption on doesn't mean other file systems are protected. Some Android devices have microSD cards, which have to be deliberately secured. MicroSD cards also make the media difficult to plug into other devices, because both devices need the same keys to use the media. Therefore, this App must be installed in the internal storage of a mobile device.
+\subsubsection{Data Encryption Techniques for Transmitted Data}
 
-\subsubsection{ Data encryption techniques for transmitted data}
+The group must also make sure that any sensitive data transmitted between mobile app and the server is encrypted. To prevent eavesdropping of network traffic by unauthorised users, all data must be transmitted over a Secure Sockets Layer (SSL), using only strong security protocols such as Transport Layer Security (TLS) to reduce the likelihood of a data breach ~\parencite{web:data_encryption_in_transit}.
 
-We should also make sure that any sensitive data transmitted between mobile devices and the enterprise is encrypted.
-
-Mobile Device Management (MDM) is like adding an extra layer of security and ensuring a way to monitor device related activities. MDM provides device platform specific features like device encryption, platform specific policies, SD Card encryption. Geo-location tracking, connectivity profiles (VPN, Wi-Fi, Bluetooth) and plenty other features are part of MDM Suite.
-
-Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), both of which are frequently referred to as ``SSL'', are cryptographic protocols designed to provide communications security over a computer network. Several versions of the protocols are in widespread use in applications such as web browsing, email, Internet faxing, instant messaging, and voice-over-IP (VoIP). Major websites (including Google, YouTube, Facebook and many others) use TLS to secure all communications between their servers and web browsers.
-
-The primary goal of the TLS protocol is to provide privacy and data integrity between two communicating computer applications. When secured by TLS, connections between a client and a server will have one or more of the following properties:
-
-The connection is private because symmetric cryptography is used to encrypt the data transmitted. The keys for this symmetric encryption are generated uniquely for each connection and are based on a secret negotiated at the start of the. The server and client negotiate the details of which encryption algorithm and cryptographic keys to use before the first byte of data is transmitted. The negotiation of a shared secret is both secure and reliable.
-
-The identity of the communicating parties can be authenticated using public key cryptography. This authentication can be made optional, but is generally required for at least one of the parties.The connection is reliable because each message transmitted includes a message integrity check using a message authentication code to prevent undetected loss or alteration of the data during transmission.
+TLS and SSL are cryptographic protocols designed to provide communications security over a computer network. According to ~\textcite{web:tls_protocol}, the primary goal of the TLS protocol is to provide \emph{``privacy and data integrity between two communicating applications''}. Moreover ~\textcite{web:tls_protocol} asserts that TLS is application protocol independent, meaning that higher-level protocols can layer on top of the TLS protocol transparently. In order to test whether the mobile app is correctly using TLS prior to general release, the group will need to capture network packets from the device it is running off of using Wireshark or a similar tool. As a result of doing this, it should be possible to determine whether any confidential data is being sent unencrypted. This will need to form part of the testing strategy once the group starts to develop the solution, as there currently nothing in the Android OS which enforces the use of TLS. 
