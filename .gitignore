@@ -27,3 +27,4 @@
 *.pdf
 *.run.xml
 
+_minted-report/

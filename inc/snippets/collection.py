@@ -16,7 +16,10 @@ negative_content = [
 ]
 
 neutral_content = [
-    ("He is alright", "neutral"),
-    ("Todays weather is just right", "neutral"),
-    ("She is alright", "neutral")
+    ("He is okay", "neutral"),
+    ("The weather is just right", "neutral"),
+    ("We have a deadline tomorrow", "neutral"),
+    ("There is someone at the door", "neutral"),
+    ("The doorkeeper was dressed in red", "neutral"),
+    ("The review is concerned with the first three volumes", "neutral")
 ]
