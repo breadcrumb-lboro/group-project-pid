@@ -2,7 +2,7 @@
 
 \subsection{Data Extraction}
 
-In order to extract content from multiple web pages, a web crawler will need to be created using the Python programming language. The group plans on using Scrapy, a Python library which will handle the ``visiting'' of websites, when provided with a sufficient list of hosts. Scrapy crawls through each directory within the host (as defined by the site's \textsl{robots.txt} file). After visiting a URL, the content will be extracted and analysed using the information retrieval methods available in the Python Natural Language Toolkit (NLTK) library.
+In order to extract content from multiple web pages, a web crawler will need to be created using the Python programming language. The group plans on using Scrapy, a Python library which when provided with a sufficient list of hosts, will handle the ``visiting'' of websites. Scrapy crawls through each directory within the host (as defined by the site's \textsl{robots.txt} file). After visiting a URL, the content will be extracted and analysed using the information retrieval methods available in the Python Natural Language Toolkit (NLTK) library.
 
 \begin{figure}
   \centering
@@ -17,19 +17,19 @@ In order to extract content from multiple web pages, a web crawler will need to 
 Many websites implement measures to prevent web crawlers from crawling due to the number of requests made as they utilise their server resources. Quite often, this results in the crawler being banned. However, the group can take the following measures to prevent this:
 
 \begin{itemize}
-  \item Disabling cookies may prevent getting banned, but only if it’s the method used by the website to detect crawlers
+  \item Disabling cookies may prevent getting banned, but only if it's the method used by the website to detect crawlers
   \item Using Google cached pages instead of visiting the websites directly
   \item Using different IP addresses by rotating from a list when making a request to the same host
   \item Setting a delay between requests
 \end{itemize}
 
-%\clearpage
+\clearpage
 
 \subsection{Sentiment Analysis}
 
-Once the user's online content has been extracted, it will then placed into one of the following categories: negative, positive or neutral. This can be achieved by performing sentiment analysis on the content. However, the app's back-end has to be first be trained by supplying sufficient training data.
+Once the user's online content has been extracted, it will be placed into one of the following categories: negative, positive or neutral. This can be achieved by performing sentiment analysis on the content. However, the app's back-end has to be first be trained by supplying sufficient training data.
 
-The language used for the sentiment analysis will be Python. Moreover, the group will also make use of the Natural Language Toolkit (NLTK) Python library.
+The language used for the sentiment analysis will be Python. In addition, the group will also make use of the Natural Language Toolkit (NLTK) Python library.
 
 \subsubsection{Data Collection \& Pre-Processing}
 
@@ -59,7 +59,7 @@ These words are then collected into a single list of tuples, each of which conta
 
 \subsubsection{Classifier Creation}
 
-Once sufficient content has been attained, a list of each word extracted from all the content needs to be collected and then ordered based on frequency of occurrence. This can be done by initially collecting all words and associating a frequency of occurrence to each and then ordering the list based on the frequency value. 
+Once sufficient content has been attained, a list of each word extracted needs to be collected and then ordered based on frequency of occurrence. 
 
 \begin{figure}[h!]
   \centering
@@ -71,7 +71,7 @@ Once sufficient content has been attained, a list of each word extracted from al
   \end{minipage}
 \end{figure}
 
-To create the classifier, relevant features needs to be captured via a feature extractor.
+To create the classifier, relevant features must be captured via a feature extractor.
 
 \begin{figure}[h!]
   \centering
@@ -113,12 +113,11 @@ Now that the classifier has been created and trained, the sentiment analyser can
 
 \subsection{Pattern Matching and Image Recognition Algorithms}
 
-  This section contains information on the pattern matching and image recognition algorithms that could utilised in the solution in order to help individuals devise a strategy for which data linked with them could be used for.
+  This section contains information on the pattern matching and image recognition algorithms that could be utilised in the solution in order to help individuals devise a strategy for which data linked with them could be used for.
 
   \subsubsection{Pattern Matching}
 
-    The bitap algorithm is an approximate or exact string matching algorithm that is one of the underlying algorithms of the UNIX ``agrep'' utility~\cite{}. It determines whether a given text contains a substring which is equal to a given pattern, where approximate equality is defined in terms of the Levenshtein distance – a complementary algorithm which determines how many changes must be made to a string or phrase in order to turn it into another string or phrase~\cite{}. In comparison to other algorithms, bitap does most of the work with bitwise operations, thus making it run super-fast.
-      %This algorithm's library is available at https://code.google.com/p/google-diff-match-patch/.
+    The bitap algorithm is an approximate or exact string matching algorithm that is one of the underlying algorithms of the UNIX ``agrep'' utility~\parencite{web:wu_2012}. It determines whether a given text contains a substring which is equal to a given pattern, where approximate equality is defined in terms of the Levenshtein distance – a complementary algorithm which determines how many changes must be made to a string or phrase in order to turn it into another string or phrase~\parencite{web:bryden_2011}. In comparison to other algorithms, bitap does most of the work with bitwise operations, therefore making it run super-fast.
 
     \begin{figure}
       \centering
@@ -132,7 +131,7 @@ Now that the classifier has been created and trained, the sentiment analyser can
 
   \subsubsection{Application}
 
-    The solution will require access to two predefined datasets for classifying the information returned by search engine. The first dataset contains some sensitive keywords that will make a significant influence on public impression, such as drug abuse or achievement. The other dataset stores the words with a neutral, negative or positive emotion, and each word has a corresponding score, for example: disappointment with score -5, humiliation with score -8, honour with score +8 and success with score +6. 
+    The solution will require access to two predefined data sets for classifying the information returned by search engine. The first data set contains some sensitive keywords that will make a significant influence on public impression, such as drug abuse or achievement. The other data set stores the words with a neutral, negative or positive emotion, and each word has a corresponding score, for example: disappointment with score -5, humiliation with score -8, honour with score +8 and success with score +6. 
 
       The steps for implementing this algorithm are as follows:
       \begin{enumerate}
@@ -145,7 +144,7 @@ Now that the classifier has been created and trained, the sentiment analyser can
 
     \subsubsection{Description}
 
-      Affine scale-invariant feature transform (or ASIFT) is computer vision algorithm that is used to detect and describe local features in images. It is regarded as an efficient method for determining matches between two arbitrarily-selected points within two widely separated views. Moreover, ASIFT is capable of finding a correspondence, even for pixels within an area with certain uniform properties, such as similar colours and textures~\cite{}.
+      Affine scale-invariant feature transform (or ASIFT) is computer vision algorithm that is used to detect and describe local features in images. It is regarded as an efficient method for determining matches between two arbitrarily-selected points within two widely separated views. Moreover, ASIFT is capable of finding a correspondence, even for pixels within an area with certain uniform properties, such as similar colours and textures~\parencite{book:pod_14}.
 
       \begin{figure}
         \centering
@@ -175,4 +174,4 @@ The latest version of the Android OS offers on-device encryption capabilities, a
 
 The group must also make sure that any sensitive data transmitted between mobile app and the server is encrypted. To prevent eavesdropping of network traffic by unauthorised users, all data must be transmitted over a Secure Sockets Layer (SSL), using only strong security protocols such as Transport Layer Security (TLS) to reduce the likelihood of a data breach ~\parencite{web:data_encryption_in_transit}.
 
-TLS and SSL are cryptographic protocols designed to provide communications security over a computer network. According to ~\textcite{web:tls_protocol}, the primary goal of the TLS protocol is to provide \emph{``privacy and data integrity between two communicating applications''}. Moreover ~\textcite{web:tls_protocol} asserts that TLS is application protocol independent, meaning that higher-level protocols can layer on top of the TLS protocol transparently. In order to test whether the mobile app is correctly using TLS prior to general release, the group will need to capture network packets from the device it is running off of using Wireshark or a similar tool. As a result of doing this, it should be possible to determine whether any confidential data is being sent unencrypted. This will need to form part of the testing strategy once the group starts to develop the solution, as there currently nothing in the Android OS which enforces the use of TLS. 
+TLS and SSL are cryptographic protocols designed to provide communications security over a computer network. According to ~\textcite{web:tls_protocol}, the primary goal of the TLS protocol is to provide \emph{``privacy and data integrity between two communicating applications''}. Moreover ~\textcite{web:tls_protocol} asserts that TLS is application protocol independent, meaning that higher-level protocols can layer on top of the TLS protocol transparently. In order to test whether the mobile app is correctly using TLS prior to general release, the group will need to capture network packets from the device it is running off of using Wireshark or a similar tool. As a result of doing this, it should be possible to determine whether any confidential data is being sent unencrypted. This will need to form part of the testing strategy once the group starts to develop the solution, as there is currently nothing in the Android OS which enforces the use of TLS. 
